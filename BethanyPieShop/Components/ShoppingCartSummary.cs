@@ -19,6 +19,9 @@ namespace BethanyPieShop.Components
 
         public IViewComponentResult Invoke()
         {
+            var items = shoppingCart.GetShoppingCartItems();
+            shoppingCart.ShoppingCartItems = items;
+
             var shoppingCartViewModel = new ShoppingCartViewModel
             {
                 ShoppingCart = shoppingCart,
